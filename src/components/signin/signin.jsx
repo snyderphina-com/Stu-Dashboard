@@ -692,6 +692,7 @@ const handleGoogle = async () => {
                 >
                   Don't have an account?{" "}
                   <button
+                  onClick={()=> navigate("/signup")}
                     type="button"
                     className="text-violet-400/80 hover:text-violet-300 font-semibold transition-colors duration-150
                       focus:outline-none focus-visible:underline"

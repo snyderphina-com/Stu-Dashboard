@@ -1,4 +1,11 @@
 import { useState, useEffect,useCallback } from "react";
+import {motion} from "framer-motion";
+import { useNavigate } from "react-router-dom";
+import { signOut } from "firebase/auth";
+import { auth } from "../../firebase";
+import { doc, getDoc } from "firebase/firestore";
+import { db } from "../../firebase";
+
 
 import Stats from "./Stats";
 import TaskForm from "./TaskForm";
@@ -6,7 +13,7 @@ import SearchBar from "./SearchBar";
 import FilterButtons from "./FilterButtons";
 import TaskList from "./TaskList";
 import Toast from "./Toast";
-
+import ProfileMenu from "../../profile/profileDropdown";
 
 
 function loadTasks() {
@@ -52,7 +59,25 @@ function applyFilterAndSort(tasks, filter, search, sort) {
 
 export default function Dashboard() {
 
- const [tasks,       setTasks]       = useState(loadTasks);
+const navigate = useNavigate();
+const handleSignOut = async () => {
+  try {
+    await signOut(auth);
+    navigate('/signin');
+  } catch{
+    navigate('/signin');
+  }
+};
+
+
+const user = auth.currentUser;
+
+if (!user) {
+  return <div className="text-white">Loading...</div>;
+}
+
+const [profile, setProfile] = useState({photoURL: "",});
+  const [tasks,       setTasks]       = useState(loadTasks);
   const [filter,      setFilter]      = useState('all');
   const [search,      setSearch]      = useState('');
   const [sort,        setSort]        = useState('none');
@@ -126,6 +151,12 @@ export default function Dashboard() {
   const bg     = darkMode ? 'bg-slate-900 text-white' : 'bg-slate-50 text-slate-900';
   const header = darkMode ? 'bg-slate-900 border-slate-800' : 'bg-white border-slate-100';
 
+
+
+
+
+
+
   return (
     <div className={`min-h-screen ${bg} transition-colors duration-300`}>
       {/* ── Top bar ── */}
@@ -139,17 +170,16 @@ export default function Dashboard() {
           </p>
         </div>
 
-        {/* Dark mode toggle — Bonus 1 */}
-        <button
-          onClick={() => setDarkMode(d => !d)}
-          className={`px-3.5 py-2 rounded-xl text-sm font-semibold transition-all duration-200
-            ${darkMode
-              ? 'bg-slate-700 text-yellow-300 hover:bg-slate-600'
-              : 'bg-slate-100 text-slate-700 hover:bg-slate-200'}`}
-          aria-label="Toggle dark mode"
-        >
-          {darkMode ? '☀️ Light' : '🌙 Dark'}
-        </button>
+<ProfileMenu user={user}
+ darkMode={darkMode} 
+ setDarkMode={setDarkMode}
+  navigate={navigate} 
+  setProfile={setProfile}
+navigate={navigate}
+
+
+/>
+
       </header>
 
       {/* ── Main content ── */}

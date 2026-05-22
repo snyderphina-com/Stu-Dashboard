@@ -240,7 +240,7 @@ export default function Dashboard() {
       >
         <div>
           <h1 className="text-xl font-bold tracking-tight">
-            📖 StudyDashboard
+          ⏳ PulseDesk ⚡
           </h1>
 
           <p
@@ -250,7 +250,7 @@ export default function Dashboard() {
                 : "text-slate-500"
             }`}
           >
-            Student Productivity Dashboard
+           📊 TaskFlow
           </p>
         </div>
 

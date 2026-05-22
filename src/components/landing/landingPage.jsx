@@ -280,7 +280,7 @@ export default function LandingPage() {
                 label="Login"
                 variant="outline"
                 onClick={() => navigate("/signin")}
-                ariaLabel="Go to login page"
+                ariaLabel="Go to sign in page"
               />
               {/* Sign Up button */}
               <AuthButton

@@ -240,7 +240,7 @@ export default function Dashboard() {
       >
         <div>
           <h1 className="text-xl font-bold tracking-tight">
-            📖 StudyDash
+            📖 StudyDashboard
           </h1>
 
           <p

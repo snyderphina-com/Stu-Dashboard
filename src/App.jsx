@@ -21,7 +21,7 @@ return(
    <Route path="/signup" element={<SignUp />} />
    <Route path="/dashboard" element={<Dashboard />} />
 
- <Route path="*" element={<Navigate to="/signin" replace />} />
+ <Route path="*" element={<LandingPage />} />
       </Routes>
   
 );  

@@ -479,7 +479,7 @@ const handleGoogle = async () => {
                       <GraduationCap size={16} className="text-violet-200" aria-hidden="true" />
                     </div>
                     <span className="text-xs tracking-widest uppercase text-blue-300/50 font-semibold">
-                      Euphine Snyder
+                      pulsedrift
                     </span>
                   </div>
 

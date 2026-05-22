@@ -463,7 +463,7 @@ export default function SignUp() {
                       </svg>
                     </div>
                     <span className="text-[0.62rem] tracking-[0.28em] uppercase font-semibold"
-                      style={{ color: "rgba(167,139,250,0.55)" }}>Student Portal</span>
+                      style={{ color: "rgba(167,139,250,0.55)" }}>PulseDrift</span>
                   </div>
 
                   <h1 className="font-display text-2xl font-bold text-white leading-tight"
@@ -471,7 +471,7 @@ export default function SignUp() {
                     Create Account
                   </h1>
                   <p className="text-sm" style={{ color: "rgba(148,163,184,0.55)" }}>
-                    Join the platform and start learning today.
+                    Join the platform and start your analytics journey.
                   </p>
                 </motion.div>
 

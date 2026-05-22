@@ -247,7 +247,8 @@ export default function LandingPage() {
                 className="font-mono text-[0.7rem] tracking-[0.22em] uppercase mt-2"
                 style={{ color: "rgba(148,163,184,0.45)" }}
               >
-                Your productivity starts here
+                Your productivity starts here <br/> <br/> <br/>
+                 Access personalized insights, track your progress, and connect with a community of monitors. Let's get started!
               </p>
             </div>
           </motion.div>

@@ -1,10 +1,10 @@
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import SignIn from "../signin/signin";
+import SignUp from "../signup/signup";
 
-/* ─────────────────────────────────────────────────────────────────
-   PARTICLE CANVAS — drifting dots with faint connection lines
-───────────────────────────────────────────────────────────────── */
+
 function ParticleField() {
   const ref = useRef(null);
   useEffect(() => {
